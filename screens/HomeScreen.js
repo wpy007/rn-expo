@@ -17,6 +17,10 @@ export default class HomeScreen extends React.Component {
     header: null,
   };
 
+  componentWillMount () {
+    console.log('this.props', this.props, this.props.navigation);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -34,8 +38,11 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
+            <TouchableOpacity onPress={
+              () => {this.props.navigation.navigate('Tabs');}
+            }>
+              <Text style={styles.getStartedText}>Get started by opening</Text>
+            </TouchableOpacity>
 
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>

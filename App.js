@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Text } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 
@@ -16,11 +16,19 @@ export default class App extends React.Component {
           onError={this._handleLoadingError}
           onFinish={this._handleFinishLoading}
         />
+        // <View>
+        //     <StatusBar backgroundColor={'cyan'} barStyle={'light-content'} translucent={false} />
+        //     <View style={{backgroundColor: '#ff571a'}}>
+        //         <Text style={{fontSize: 40}}>some text</Text>
+        //     </View>
+
+        // </View>
       );
     } else {
       return (
         <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          {/* 貌似这里StatusBar根本没用，至少StatusBar貌似和navigation冲突 */}
+          {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
           <AppNavigator />
         </View>
       );
