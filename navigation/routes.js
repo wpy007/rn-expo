@@ -1,16 +1,16 @@
-import Tabs from '../src/pages/Tabs';
-import Keyboard from '../src/pages/Keyboard';
-import Input from '../src/pages/Input';
+import TabsDemo from '../src/demo/Tabs';
+import KeyboardDemo from '../src/demo/Keyboard';
+import InputDemo from '../src/demo/Input';
 
 const routes = {
   Tabs: {
-    screen: Tabs,
+    screen: TabsDemo,
   },
   Keyboard: {
-    screen: Keyboard,
+    screen: KeyboardDemo,
   },
   Input: {
-    screen: Input,
+    screen: InputDemo,
   },
 };
 
